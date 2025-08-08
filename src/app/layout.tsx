@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import "@/styles/global.css";
+
+export const metadata: Metadata = {
+  title: "Portfolio",
+  description: "Personal portfolio website",
+};
 
 export default function RootLayout({
   children,
