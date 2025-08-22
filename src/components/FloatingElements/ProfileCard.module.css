@@ -1,0 +1,40 @@
+.profileCard {
+  position: absolute;
+  bottom: 10%;
+  right: 25%;
+  width: 280px;
+  height: 100px;
+  background-color: var(--color-pink);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  transform: rotate(3deg);
+}
+
+.profileContent {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  height: 100%;
+}
+
+.profileImage {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profileText {
+  color: var(--color-white);
+}
+
+.profileName {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-xs);
+}
+
+.profileTitle {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}

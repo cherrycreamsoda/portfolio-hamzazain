@@ -1,0 +1,19 @@
+.duckCard {
+  position: absolute;
+  top: 15%;
+  right: 25%;
+  width: 120px;
+  height: 120px;
+  background-color: var(--color-cyan);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(5deg);
+}
+
+.duckImage {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}

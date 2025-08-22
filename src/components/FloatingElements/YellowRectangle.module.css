@@ -1,0 +1,10 @@
+.yellowRect {
+  position: absolute;
+  bottom: 25%;
+  left: 8%;
+  width: 200px;
+  height: 120px;
+  background-color: var(--color-yellow);
+  border-radius: var(--radius-lg);
+  transform: rotate(-12deg);
+}

@@ -1,0 +1,17 @@
+.greeting {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 1rem;
+  margin-bottom: var(--spacing-xl);
+  color: var(--color-text-muted);
+}
+
+.dot {
+  color: var(--color-accent);
+  font-size: 1.5rem;
+}
+
+.wave {
+  font-size: 1.25rem;
+}

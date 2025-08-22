@@ -1,0 +1,17 @@
+.ctaButton {
+  background-color: var(--color-accent);
+  color: var(--color-black);
+  border: none;
+  padding: 0.75rem var(--spacing-lg);
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 0.95rem;
+}
+
+.arrow {
+  font-size: 1rem;
+}

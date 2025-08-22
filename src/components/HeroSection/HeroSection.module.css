@@ -1,0 +1,13 @@
+.heroSection {
+  position: relative;
+  z-index: 10;
+  max-width: 600px;
+  margin-left: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    margin-left: 0;
+  }
+}

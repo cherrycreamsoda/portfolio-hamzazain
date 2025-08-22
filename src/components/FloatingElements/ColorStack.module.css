@@ -1,0 +1,15 @@
+.colorStack {
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  width: 200px;
+  height: 300px;
+  transform: rotate(8deg);
+}
+
+.colorBar {
+  width: 100%;
+  height: 70px;
+  margin-bottom: 5px;
+  border-radius: var(--radius-md);
+}

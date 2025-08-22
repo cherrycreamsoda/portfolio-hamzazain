@@ -1,0 +1,29 @@
+.phoneMockup {
+  position: absolute;
+  top: 35%;
+  right: 15%;
+  width: 180px;
+  height: 320px;
+  background-color: var(--color-yellow);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-md);
+  transform: rotate(-3deg);
+}
+
+.phoneScreen {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-black);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.phoneScreen img {
+  width: 80%;
+  height: 60%;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
