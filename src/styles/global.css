@@ -1,4 +1,32 @@
+/* Reset and base styles */
 * {
-  background-color: black;
-  color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Custom CSS variables for the portfolio */
+:root {
+  --primary-color: #a3e635;
+  /* --background-dark: #1a1a1a; */
+  --background-dark: #000000;
+  --text-light: #ffffff;
+  --text-muted: #cccccc;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+}
+
+body {
+  background-color: var(--background-dark);
+  color: var(--text-light);
+  overflow: hidden;
 }
