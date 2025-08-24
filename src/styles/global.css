@@ -14,7 +14,7 @@ body {
 /* Custom CSS variables for the portfolio */
 :root {
   --primary-color: #a3e635;
-  /* --background-dark: #1a1a1a; */
+  /* Updated background color to match user's preference */
   --background-dark: #272727;
   --text-light: #ffffff;
   --text-muted: #cccccc;
@@ -26,7 +26,7 @@ body {
 }
 
 body {
-  /* background-color: var(--background-dark); */
+  /* Updated background to use gradient as specified by user */
   background: linear-gradient(
     var(--background-dark),
     var(--background-dark),
