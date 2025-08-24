@@ -15,7 +15,7 @@ body {
 :root {
   --primary-color: #a3e635;
   /* --background-dark: #1a1a1a; */
-  --background-dark: #000000;
+  --background-dark: #272727;
   --text-light: #ffffff;
   --text-muted: #cccccc;
   --spacing-xs: 4px;
@@ -26,7 +26,12 @@ body {
 }
 
 body {
-  background-color: var(--background-dark);
+  /* background-color: var(--background-dark); */
+  background: linear-gradient(
+    var(--background-dark),
+    var(--background-dark),
+    #1b1b1b
+  );
   color: var(--text-light);
   overflow: hidden;
 }
