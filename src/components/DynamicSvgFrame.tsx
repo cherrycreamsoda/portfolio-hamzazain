@@ -49,11 +49,12 @@ export default function DynamicSvgFrame() {
   const y6 = 11 + X; // This gets X added (first part of divided line)
   const y7 = 10.5; // This stays unchanged (second part of divided line)
 
-  const heartY1 = 11 + X;
-  const heartY2 = 15 + X;
-  const heartY3 = 11 + X;
-  const heartY4 = 9 + X;
-  const heartY5 = 11 + X;
+  const heartY1 = 15.065 + X;
+  const heartY2 = 11.698 + X;
+  const heartY3 = 8.331 + X;
+  const heartY4 = 8.623 + X;
+  const heartY5 = 8.331 + X;
+  const heartY6 = 11.698 + X;
 
   const pathData = `M0 1A1 1 0 011 0L10 0A1 1 2 0111 .5 1 1 0 0012 1L22 1A1 1 0 0023 .5 1 1 0 0124 0L30 0A1 1 0 0131 .5 1 1 0 0032 1L35 1A1 1 0 0136 2L36 ${y1}A1 1 0 00${y2_x} ${y2_y}L${y3_x} ${y3_y}A1 1 0 0135 ${y4}L1 ${y4}A1 1 0 010 ${y5}L0 ${y6}L0 ${y7}A1 1 0 011 9.5L13.5 9.5A1 1 0 0014.5 8.5L14.5 5A1 1 0 0013.5 4L1 4a1 1 0 01-1-1Z`;
 
@@ -82,7 +83,12 @@ export default function DynamicSvgFrame() {
         </defs>
         <path d={pathData} fill="url(#marblePattern)" stroke="none" />
         <path
-          d={`M40 ${heartY1}L36 ${heartY2}L32 ${heartY3}A1 1 0 0136 ${heartY4}A1 1 0 0140 ${heartY5}`}
+          d={`M35.952 ${heartY1} 
+              32.317 ${heartY2}
+              A1 1 0 0135.722 ${heartY3}
+              L36 ${heartY4} 
+              36.278 ${heartY5}
+              A1 1 0 0139.683 ${heartY6}Z`}
           fill="#ef4444"
         />
       </svg>
