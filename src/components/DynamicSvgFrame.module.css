@@ -10,6 +10,12 @@
   width: auto;
   height: auto;
   overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.fadeIn {
+  opacity: 1;
 }
 
 .svgFrame {

@@ -1,4 +1,3 @@
-// src/components/DynamicSvgFrame.tsx
 "use client";
 import { useRef, useState, useEffect } from "react";
 import styles from "./DynamicSvgFrame.module.css";
@@ -18,8 +17,7 @@ export default function DynamicSvgFrame() {
           width: containerRef.current.offsetWidth,
           height: containerRef.current.offsetHeight,
         });
-      } else {
-        // fallback to viewport minus margins (only used until the container mounts)
+      } else if (typeof window !== "undefined") {
         setDimensions({
           width: Math.max(1, window.innerWidth - 16),
           height: Math.max(1, window.innerHeight - 16),
@@ -31,23 +29,19 @@ export default function DynamicSvgFrame() {
     const ro = new ResizeObserver(updateDimensions);
     if (containerRef.current) ro.observe(containerRef.current);
     window.addEventListener("resize", updateDimensions);
+
     return () => {
-      try {
-        ro.disconnect();
-      } catch {}
+      ro.disconnect();
       window.removeEventListener("resize", updateDimensions);
     };
   }, []);
 
-  // allow immediate render: prefer measured dimensions, fallback to container DOM or viewport
-  const measuredWidth =
-    dimensions?.width ??
-    containerRef.current?.offsetWidth ??
-    window.innerWidth - 16;
-  const measuredHeight =
-    dimensions?.height ??
-    containerRef.current?.offsetHeight ??
-    window.innerHeight - 16;
+  if (!dimensions) {
+    return <div ref={containerRef} className={styles.container} />;
+  }
+
+  const measuredWidth = dimensions.width;
+  const measuredHeight = dimensions.height;
 
   const originalWidth = 36;
   const originalHeight = 17.12;
@@ -70,15 +64,8 @@ export default function DynamicSvgFrame() {
 
   const pathData = `M0 1A1 1 0 011 0L10 0A1 1 2 0111 .5 1 1 0 0012 1L22 1A1 1 0 0023 .5 1 1 0 0124 0L30 0A1 1 0 0131 .5 1 1 0 0032 1L35 1A1 1 0 0136 2L36 ${y1}A1 1 0 00${y2_x} ${y2_y}L${y3_x} ${y3_y}A1 1 0 0135 ${y4}L1 ${y4}A1 1 0 010 ${y5}L0 ${y6}L0 ${y7}A1 1 0 011 9.5L13.5 9.5A1 1 0 0014.5 8.5L14.5 5A1 1 0 0013.5 4L1 4a1 1 0 01-1-1Z`;
 
-  const heartY1 = 15.065 + X;
-  const heartY2 = 11.698 + X;
-  const heartY3 = 8.331 + X;
-  const heartY4 = 8.623 + X;
-  const heartY5 = 8.331 + X;
-  const heartY6 = 11.698 + X;
-
   return (
-    <div ref={containerRef} className={styles.container}>
+    <div ref={containerRef} className={`${styles.container} ${styles.fadeIn}`}>
       <svg
         className={styles.svgFrame}
         width="100%"
@@ -102,11 +89,7 @@ export default function DynamicSvgFrame() {
           </pattern>
         </defs>
 
-        {/* main frame path */}
         <path d={pathData} fill="url(#marblePattern)" stroke="none" />
-
-        {/* small heart left-bottom (unchanged) */}
-        {/* NOTE: we removed the big heart path from inside the SVG */}
       </svg>
 
       <div className={styles.heartContainer}>
@@ -118,7 +101,6 @@ export default function DynamicSvgFrame() {
         </svg>
       </div>
 
-      {/* big heart overlay (outside the container) */}
       <BigHeart containerRef={containerRef} />
     </div>
   );
